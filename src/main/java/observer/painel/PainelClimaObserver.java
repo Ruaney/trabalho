@@ -1,4 +1,4 @@
-package observer;
+package observer.painel;
 
 import java.time.LocalDate;
 import java.util.List;

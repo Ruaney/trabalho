@@ -16,7 +16,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.DadoClima;
-import observer.EstacaoClimatica;
+import observer.painel.EstacaoClimatica;
+import services.LogService;
 import view.ViewDadosClima;
 
 /**
@@ -27,13 +28,14 @@ public class DadosClimaticosPresenter {
 
     private ViewDadosClima view;
     private EstacaoClimatica estacaoClimatica;
+    private LogService logService;
 
-    public DadosClimaticosPresenter(EstacaoClimatica estacaoClimatica) {
+    public DadosClimaticosPresenter(EstacaoClimatica estacaoClimatica, LogService logService) {
         view = new ViewDadosClima();
         view.setVisible(true);
 
         this.estacaoClimatica = estacaoClimatica;
-
+        this.logService = logService;
         view.getBtnIncluir().addActionListener((ActionEvent e) -> {
             try {
                 inserirClima();
@@ -44,18 +46,18 @@ public class DadosClimaticosPresenter {
         view.getBtnRemover().addActionListener((ActionEvent e) -> {
             removerClima();
         });
-        
-         view.getBtnDataAtual().addActionListener((ActionEvent e) -> {
+
+        view.getBtnDataAtual().addActionListener((ActionEvent e) -> {
             inserirDataAtualNoCampo();
         });
     }
-    
-    private void inserirDataAtualNoCampo(){
+
+    private void inserirDataAtualNoCampo() {
         LocalDate date = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         view.getTxtData().setText(date.format(formatter));
     }
-    
+
     private void inserirClima() throws ParseException {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         dateFormat.setLenient(false);
@@ -67,11 +69,13 @@ public class DadosClimaticosPresenter {
         Float umidade = Float.valueOf(view.getTxtUmidade().getText());
         DadoClima clima = new DadoClima(temperatura, umidade, pressao, date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
 
+        logService.addData();
+        
         estacaoClimatica.atualizar(clima, view);
     }
 
     private void removerClima() {
-
+        logService.removeData();
     }
 
 }

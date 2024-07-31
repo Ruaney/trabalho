@@ -10,10 +10,10 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import model.Painel;
-import observer.EstacaoClimatica;
-import observer.EstatisticaClimaObserver;
-import observer.MaximasMinimasObserver;
-import observer.PainelClimaObserver;
+import observer.painel.EstacaoClimatica;
+import observer.painel.EstatisticaClimaObserver;
+import observer.painel.MaximasMinimasObserver;
+import observer.painel.PainelClimaObserver;
 import presenter.DadosClimaticosPresenter;
 
 /**
@@ -83,8 +83,8 @@ public class ViewDadosClima extends javax.swing.JFrame {
         lblRegistrosMedia = new javax.swing.JLabel();
         jInternalFrame4 = new javax.swing.JInternalFrame();
         jLabel12 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        btnSalvar = new javax.swing.JButton();
+        cbFormatoLog = new javax.swing.JComboBox<>();
         jInternalFrame5 = new javax.swing.JInternalFrame();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -339,14 +339,19 @@ public class ViewDadosClima extends javax.swing.JFrame {
 
         jLabel12.setText("Log");
 
-        jButton4.setText("Salvar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnSalvarActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbFormatoLog.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "XML", "jSON" }));
+        cbFormatoLog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbFormatoLogActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jInternalFrame4Layout = new javax.swing.GroupLayout(jInternalFrame4.getContentPane());
         jInternalFrame4.getContentPane().setLayout(jInternalFrame4Layout);
@@ -357,11 +362,11 @@ public class ViewDadosClima extends javax.swing.JFrame {
                 .addGroup(jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton4))
+                        .addComponent(btnSalvar))
                     .addGroup(jInternalFrame4Layout.createSequentialGroup()
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)
-                        .addComponent(jComboBox2, 0, 156, Short.MAX_VALUE)))
+                        .addComponent(cbFormatoLog, 0, 156, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jInternalFrame4Layout.setVerticalGroup(
@@ -370,9 +375,9 @@ public class ViewDadosClima extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbFormatoLog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addComponent(jButton4)
+                .addComponent(btnSalvar)
                 .addContainerGap(79, Short.MAX_VALUE))
         );
 
@@ -417,7 +422,7 @@ public class ViewDadosClima extends javax.swing.JFrame {
                     .addComponent(lblPressaoUltimaAtt, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUmidadeUltimaAtt, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTemperaturaUltimaAtt))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jInternalFrame5Layout.setVerticalGroup(
             jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -684,9 +689,9 @@ public class ViewDadosClima extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPresaoActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     public JButton getBtnDataAtual() {
         return btnDataAtual;
@@ -707,6 +712,10 @@ public class ViewDadosClima extends javax.swing.JFrame {
     private void btnDataAtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDataAtualActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDataAtualActionPerformed
+
+    private void cbFormatoLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFormatoLogActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbFormatoLogActionPerformed
 
     public void setTxtData(JTextField txtData) {
         this.txtData = txtData;
@@ -756,8 +765,8 @@ public class ViewDadosClima extends javax.swing.JFrame {
     private javax.swing.JButton btnDataAtual;
     private javax.swing.JButton btnIncluir;
     private javax.swing.JButton btnRemover;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton btnSalvar;
+    private javax.swing.JComboBox<String> cbFormatoLog;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
