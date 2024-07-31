@@ -1,4 +1,9 @@
-com\mycompany\dadosclimaticos\DadosClima$1.class
-com\mycompany\dadosclimaticos\DadosClima.class
-com\mycompany\dadosclimaticos\DadosDoTempo.class
-com\mycompany\dadosclimaticos\DadosDoTempo$1.class
+observer/RegistrosTabelaObserver.class
+observer/PainelClimaObserver.class
+view/ViewDadosClima$11.class
+presenter/DadosClimaticosPresenter.class
+observer/EstacaoClimatica.class
+observer/MaximasMinimasObserver.class
+observer/RegistroLabelObserver.class
+observer/EstatisticaClimaObserver.class
+view/ViewDadosClima$10.class
