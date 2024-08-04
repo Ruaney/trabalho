@@ -16,7 +16,7 @@ import model.IRegistraLog;
 import model.Operacao;
 
 public class LogService {
-
+ 
     private Configuracao config;
 
     public LogService(Configuracao config) {
