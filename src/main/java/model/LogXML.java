@@ -16,12 +16,9 @@ import model.Operacao;
  *
  * @author ruaney
  */
-public class LogXML implements IRegistraLog {
+public class LogXML  {
 
-    public LogXML() {
-    }
-
-    @Override
+    
     public void log(Operacao operation) throws IOException {
         String log = String.format("<log>\\n\\t<timestamp>%s</timestamp>\\n\\t<operation>%s</operation>\\n</log>\\n",
                 LocalDateTime.now().toString(), operation.toString());

@@ -4,7 +4,9 @@
  */
 package model;
 
+import adapter.log.ILogAdapter;
 import adapter.log.LogJSONAdapter;
+import adapter.log.LogXMLAdapter;
 
 /**
  *
@@ -12,7 +14,7 @@ import adapter.log.LogJSONAdapter;
  */
 public class Configuracao {
 
-    private LogJSONAdapter logAdapter;
+    private ILogAdapter logAdapter;
 
     public Configuracao() {
     }
@@ -32,7 +34,7 @@ public class Configuracao {
         }
     }
 
-    public LogJSONAdapter getLogAdapter() {
+    public ILogAdapter getLogAdapter() {
         return logAdapter;
     }
 }
