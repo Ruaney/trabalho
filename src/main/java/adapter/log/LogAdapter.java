@@ -30,4 +30,4 @@ public class LogAdapter implements ILogAdapter{
         }
     }
     
-}
+} 
