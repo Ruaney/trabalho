@@ -13,7 +13,7 @@ import adapter.log.LogAdapter;
 public class Configuracao {
 
     private LogAdapter logAdapter;
-
+ 
     public Configuracao() {
     }
 
