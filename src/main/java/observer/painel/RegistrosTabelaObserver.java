@@ -4,6 +4,8 @@
  */
 package observer.painel;
 
+import clima.collection.ClimaCollection;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -19,34 +21,27 @@ import view.ViewDadosClima;
  */
 public class RegistrosTabelaObserver implements Painel {
 
-    private List<DadoClima> dadosClima;
-
-    public RegistrosTabelaObserver() {
-         dadosClima = new ArrayList<>();
-    }
 
     @Override
-    public void atualizar(DadoClima dadoClima, ViewDadosClima view) {
-        dadosClima.add(dadoClima);
-        attTabela(view);
-    }
-
-    private void attTabela(ViewDadosClima view) {
-        DefaultTableModel tmDadosClimaticos = new DefaultTableModel(
+    public void atualizar(ClimaCollection climas, ViewDadosClima view) {
+         DefaultTableModel tmDadosClimaticos = new DefaultTableModel(
                 new Object[][]{},
                 new String[]{"ID", "Data", "Temperatura", "Umidade", "Pressão"}
         );
 
         view.getTblRegistros().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        ListIterator<DadoClima> it = dadosClima.listIterator();
+        ListIterator<DadoClima> it = climas.getClimas().listIterator();
 
         while (it.hasNext()) {
             DadoClima clima = it.next();
+
             String temperatura = String.valueOf(clima.getTemperatura());
-            String data = String.valueOf(clima.getData());
+            String data = String.valueOf(clima.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
             String umidade = String.valueOf(clima.getUmidade());
             String pressao = String.valueOf(clima.getPressao());
-            tmDadosClimaticos.addRow(new Object[]{"0", data, temperatura, umidade, pressao});
+            String id = clima.getId();
+
+            tmDadosClimaticos.addRow(new Object[]{id, data, temperatura, umidade, pressao});
         }
         view.getTblRegistros().setModel(tmDadosClimaticos);
     }

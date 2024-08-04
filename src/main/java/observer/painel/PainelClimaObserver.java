@@ -1,6 +1,8 @@
 package observer.painel;
 
+import clima.collection.ClimaCollection;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import model.DadoClima;
 import model.Painel;
@@ -15,11 +17,11 @@ public class PainelClimaObserver implements Painel {
     }
 
     @Override
-    public void atualizar(DadoClima dadoClima, ViewDadosClima view) {
-
+    public void atualizar(ClimaCollection climas, ViewDadosClima view) {
+        DadoClima dadoClima = climas.getClimas().getLast();
         if (dadoClima.getData().isEqual(LocalDate.now())) {
          
-            String data = String.valueOf(dadoClima.getData());
+            String data =  String.valueOf(dadoClima.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
             String pressao = String.valueOf(dadoClima.getPressao());
             String umidade = String.valueOf(dadoClima.getUmidade());
             String temperatura = String.valueOf(dadoClima.getTemperatura());

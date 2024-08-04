@@ -1,5 +1,6 @@
 package model;
 
+import clima.collection.ClimaCollection;
 import observer.painel.PainelClimaObserver;
 import observer.painel.EstatisticaClimaObserver;
 import observer.painel.MaximasMinimasObserver;
@@ -22,8 +23,8 @@ public class Principal {
         Painel registrosTabelaObserver = new RegistrosTabelaObserver();
         
         Configuracao config = new Configuracao();
-        config.setFormato("json");
-        LogService logService = new LogService(config.getLogAdapter());
+        config.setFormato("xml");
+        LogService logService = new LogService(config);
         
         estacaoClimatica.registrarPainel(painelClimaObserver);
         estacaoClimatica.registrarPainel(estatisticaClimaObserver);
@@ -31,7 +32,8 @@ public class Principal {
         estacaoClimatica.registrarPainel(registroLabelObserver);
         estacaoClimatica.registrarPainel(registrosTabelaObserver);
         
-        DadosClimaticosPresenter presenter = new DadosClimaticosPresenter(estacaoClimatica, logService);
+        ClimaCollection climas = new ClimaCollection();
+        DadosClimaticosPresenter presenter = new DadosClimaticosPresenter(estacaoClimatica, logService,climas);
 
     }
 }

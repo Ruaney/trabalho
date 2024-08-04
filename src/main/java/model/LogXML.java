@@ -23,16 +23,16 @@ public class LogXML implements IRegistraLog {
 
     @Override
     public void log(Operacao operation) throws IOException {
-        String log = String.format("<log><timestamp>%s</timestamp><operation>%s</operation></log>",
+        String log = String.format("<log>\\n\\t<timestamp>%s</timestamp>\\n\\t<operation>%s</operation>\\n</log>\\n",
                 LocalDateTime.now().toString(), operation.toString());
         saveToFile(log);
     }
 
     private void saveToFile(String log) throws IOException {
         try (FileWriter writer = new FileWriter("logoperacoes.xml", true)) {
-            writer.write(log + System.lineSeparator());
+            writer.write(log);
         } catch (IOException e) {
-            System.err.println("Erro ao salvar o log em XML: " + e.getMessage());
+           throw new IOException("erro ao salvar arquivo");
         }
     }
 }
