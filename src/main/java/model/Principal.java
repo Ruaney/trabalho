@@ -1,22 +1,37 @@
 package model;
 
+import observer.painel.PainelClimaObserver;
+import observer.painel.EstatisticaClimaObserver;
+import observer.painel.MaximasMinimasObserver;
+import observer.painel.EstacaoClimatica;
 import java.time.LocalDate;
+import observer.painel.RegistroLabelObserver;
+import observer.painel.RegistrosTabelaObserver;
+import presenter.DadosClimaticosPresenter;
+import services.LogService;
+import view.ViewDadosClima;
 
 public class Principal {
 
-   public static void main(String[] args) {
-       EstacaoClimatica estacaoClimatica = new EstacaoClimatica();
-       Painel painelClimaObserver = new PainelClimaObserver();
-       Painel estatisticaClimaObserver = new EstatisticaClimaObserver();
-       Painel maximasMinimasObserver = new MaximasMinimasObserver();
+    public static void main(String[] args) {
+        EstacaoClimatica estacaoClimatica = new EstacaoClimatica();
+        Painel painelClimaObserver = new PainelClimaObserver();
+        Painel estatisticaClimaObserver = new EstatisticaClimaObserver();
+        Painel maximasMinimasObserver = new MaximasMinimasObserver();
+        Painel registroLabelObserver = new RegistroLabelObserver();
+        Painel registrosTabelaObserver = new RegistrosTabelaObserver();
+        
+        Configuracao config = new Configuracao();
+        config.setFormato("json");
+        LogService logService = new LogService(config.getLogAdapter());
+        
+        estacaoClimatica.registrarPainel(painelClimaObserver);
+        estacaoClimatica.registrarPainel(estatisticaClimaObserver);
+        estacaoClimatica.registrarPainel(maximasMinimasObserver);
+        estacaoClimatica.registrarPainel(registroLabelObserver);
+        estacaoClimatica.registrarPainel(registrosTabelaObserver);
+        
+        DadosClimaticosPresenter presenter = new DadosClimaticosPresenter(estacaoClimatica, logService);
 
-       estacaoClimatica.registrarPainel(painelClimaObserver);
-       estacaoClimatica.registrarPainel(estatisticaClimaObserver);
-       estacaoClimatica.registrarPainel(maximasMinimasObserver);
-
-       estacaoClimatica.atualizarMedicoes(25.5f, 65f, 1013.1f, LocalDate.of(2023, 5, 1));
-       estacaoClimatica.atualizarMedicoes(26.0f, 68f, 1012.5f, LocalDate.of(2023, 5, 2));
-       estacaoClimatica.atualizarMedicoes(24.0f, 60f, 1015.5f, LocalDate.of(2023, 5, 3));
-   }
+    }
 }
-
