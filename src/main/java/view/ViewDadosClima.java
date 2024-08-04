@@ -815,4 +815,18 @@ public class ViewDadosClima extends javax.swing.JFrame {
     private javax.swing.JTextField txtTemperatura;
     private javax.swing.JTextField txtUmidade;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the btnSalvar
+     */
+    public javax.swing.JButton getBtnSalvar() {
+        return btnSalvar;
+    }
+
+    /**
+     * @return the cbFormatoLog
+     */
+    public javax.swing.JComboBox<String> getCbFormatoLog() {
+        return cbFormatoLog;
+    }
 }

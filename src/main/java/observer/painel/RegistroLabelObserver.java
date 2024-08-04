@@ -4,6 +4,7 @@
  */
 package observer.painel;
 
+import clima.collection.ClimaCollection;
 import java.util.ArrayList;
 import java.util.List;
 import model.DadoClima;
@@ -16,20 +17,13 @@ import view.ViewDadosClima;
  */
 public class RegistroLabelObserver implements Painel {
 
-    private List<DadoClima> dadosClima;
-
     public RegistroLabelObserver() {
-         dadosClima = new ArrayList<>();
     }
 
     @Override
-    public void atualizar(DadoClima dadoClima, ViewDadosClima view) {
-        dadosClima.add(dadoClima);
-        attLabel(view);
-    }
-
-    private void attLabel(ViewDadosClima view) {
-        String total = String.valueOf(dadosClima.size());
+    public void atualizar(ClimaCollection climas, ViewDadosClima view) {
+        String total = String.valueOf(climas.getClimas().size());
         view.getLblNumeroRegistros().setText(total);
     }
+
 }

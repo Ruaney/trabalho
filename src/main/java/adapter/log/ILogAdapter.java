@@ -4,6 +4,7 @@
  */
 package adapter.log;
 
+import java.io.IOException;
 import model.Operacao;
 
 /**
@@ -12,5 +13,5 @@ import model.Operacao;
  */
 public interface ILogAdapter {
 
-    public void registrarLog(Operacao operation);
+    public void registrarLog(Operacao operation) throws IOException;
 }

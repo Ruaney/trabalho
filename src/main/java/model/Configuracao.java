@@ -4,7 +4,7 @@
  */
 package model;
 
-import adapter.log.LogAdapter;
+import adapter.log.LogJSONAdapter;
 
 /**
  *
@@ -12,8 +12,8 @@ import adapter.log.LogAdapter;
  */
 public class Configuracao {
 
-    private LogAdapter logAdapter;
- 
+    private LogJSONAdapter logAdapter;
+
     public Configuracao() {
     }
 
@@ -22,17 +22,17 @@ public class Configuracao {
 
         switch (formatoEnum) {
             case XML:
-                logAdapter = new LogAdapter(new LogXML());
+                logAdapter = new LogXMLAdapter(new LogXML());
                 break;
             case JSON:
-                 logAdapter = new LogAdapter(new LogJSON());
+                 logAdapter = new LogJSONAdapter(new LogJSON());
                 break;
             default:
                 throw new IllegalArgumentException("Formato de arquivo não suportado: " + formato);
         }
     }
 
-    public LogAdapter getLogAdapter() {
+    public LogJSONAdapter getLogAdapter() {
         return logAdapter;
     }
 }

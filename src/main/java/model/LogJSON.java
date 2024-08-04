@@ -21,17 +21,17 @@ public class LogJSON implements IRegistraLog {
     }
 
     @Override
-    public void log(Operacao operation) {
+    public void log(Operacao operation) throws IOException {
         String log = String.format("{ \"timestamp\": \"%s\", \"operation\": \"%s\"}",
                 LocalDateTime.now().toString(), operation.toString());
         saveToFile(log);
     }
 
-    private void saveToFile(String log) {
+    private void saveToFile(String log) throws IOException {
         try (FileWriter writer = new FileWriter("log.json", true)) {
             writer.write(log + System.lineSeparator());
         } catch (IOException e) {
-            System.err.println("Erro ao salvar o log em JSON: " + e.getMessage());
+           throw new IOException("erro ao salvar arquivo");
         }
     }
 }

@@ -1,5 +1,6 @@
 package observer.painel;
 
+import clima.collection.ClimaCollection;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +24,9 @@ public class EstacaoClimatica {
         paineis.remove(painel);
     }
 
-    public void atualizar(DadoClima clima, ViewDadosClima view) {
+    public void atualizar(ClimaCollection climas, ViewDadosClima view) {
         for (Painel painel : paineis) {
-            painel.atualizar(clima, view);
+            painel.atualizar(climas, view);
         }
     }
 

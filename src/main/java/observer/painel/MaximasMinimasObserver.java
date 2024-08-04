@@ -1,5 +1,6 @@
 package observer.painel;
 
+import clima.collection.ClimaCollection;
 import java.util.ArrayList;
 import java.util.List;
 import model.DadoClima;
@@ -8,19 +9,11 @@ import view.ViewDadosClima;
 
 public class MaximasMinimasObserver implements Painel {
 
-    private List<DadoClima> dadosClima;
-
-    public MaximasMinimasObserver() {
-        dadosClima = new ArrayList<>();
-    }
+  
 
     @Override
-    public void atualizar(DadoClima dadoClima, ViewDadosClima view) {
-        dadosClima.add(dadoClima);
-        exibirMaximasMinimas(view);
-    }
-
-    private void exibirMaximasMinimas(ViewDadosClima view) {
+    public void atualizar(ClimaCollection climas, ViewDadosClima view) {
+        List<DadoClima> dadosClima = climas.getClimas();
         if (dadosClima.isEmpty()) {
             System.out.println("Não há dados para exibir.");
             return;
@@ -43,4 +36,5 @@ public class MaximasMinimasObserver implements Painel {
         }
 
     }
+
 }

@@ -1,9 +1,10 @@
 package model;
 
+import clima.collection.ClimaCollection;
 import view.ViewDadosClima;
 
 public interface Painel {
 
-   void atualizar(DadoClima dadoClima, ViewDadosClima view);
+   void atualizar(ClimaCollection climas, ViewDadosClima view);
 }
 
