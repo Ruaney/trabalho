@@ -14,13 +14,8 @@ import model.Operacao;
  *
  * @author ruaney
  */
-public class LogJSON implements IRegistraLog {
+public class LogJSON  {
 
-    public LogJSON() {
-
-    }
-
-    @Override
     public void log(Operacao operation) throws IOException {
         String log = String.format("{ \"timestamp\": \"%s\", \"operation\": \"%s\"}",
                 LocalDateTime.now().toString(), operation.toString());
