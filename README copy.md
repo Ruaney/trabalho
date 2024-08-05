@@ -1,1 +1,0 @@
-![alt text](diagrama_atualizado.png)
