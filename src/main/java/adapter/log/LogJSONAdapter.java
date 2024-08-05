@@ -5,7 +5,6 @@
 package adapter.log;
 
 import java.io.IOException;
-import model.LogJSON;
 import model.Operacao;
 
 /**

@@ -1,5 +1,6 @@
 package model;
 
+import adapter.log.Configuracao;
 import clima.collection.ClimaCollection;
 import observer.painel.PainelClimaObserver;
 import observer.painel.EstatisticaClimaObserver;

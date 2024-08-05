@@ -8,11 +8,9 @@ package services;
  *
  * @author ruaney
  */
+import adapter.log.Configuracao;
 import adapter.log.ILogAdapter;
-import adapter.log.LogJSONAdapter;
 import java.io.IOException;
-import model.Configuracao;
-import model.IRegistraLog;
 import model.Operacao;
 
 public class LogService {

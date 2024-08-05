@@ -23,6 +23,12 @@ import model.DadoClima;
 import observer.painel.EstacaoClimatica;
 import services.LogService;
 import view.ViewDadosClima;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
 
 /**
  *
@@ -126,6 +132,82 @@ public class DadosClimaticosPresenter {
         }
 
         estacaoClimatica.atualizar(climas, view);
+    }
+
+    private void exibirMaximasMinimas(ViewDadosClima view, List<DadoClima> dadosClima) {
+        if (dadosClima.isEmpty()) {
+            System.out.println("Não há dados para exibir.");
+            return;
+        }
+
+        // Calculate maximum and minimum values
+        float maxTemperatura = dadosClima.get(0).getTemperatura();
+        float minTemperatura = maxTemperatura;
+        float maxUmidade = dadosClima.get(0).getUmidade();
+        float minUmidade = maxUmidade;
+        float maxPressao = dadosClima.get(0).getPressao();
+        float minPressao = maxPressao;
+
+        for (DadoClima dado : dadosClima) {
+            maxTemperatura = Math.max(maxTemperatura, dado.getTemperatura());
+            minTemperatura = Math.min(minTemperatura, dado.getTemperatura());
+            maxUmidade = Math.max(maxUmidade, dado.getUmidade());
+            minUmidade = Math.min(minUmidade, dado.getUmidade());
+            maxPressao = Math.max(maxPressao, dado.getPressao());
+            minPressao = Math.min(minPressao, dado.getPressao());
+        }
+
+        // Create datasets for temperature, humidity, and pressure
+        XYSeries serieTemperaturaMax = new XYSeries("Temperatura Máxima");
+        XYSeries serieTemperaturaMin = new XYSeries("Temperatura Mínima");
+        XYSeries serieUmidadeMax = new XYSeries("Umidade Máxima");
+        XYSeries serieUmidadeMin = new XYSeries("Umidade Mínima");
+        XYSeries seriePressaoMax = new XYSeries("Pressão Máxima");
+        XYSeries seriePressaoMin = new XYSeries("Pressão Mínima");
+
+        // Add data points to the series (assuming each DadoClima has an index)
+        for (int i = 0; i < dadosClima.size(); i++) {
+            DadoClima dado = dadosClima.get(i);
+            serieTemperaturaMax.add(i, dado.getTemperatura());
+            serieTemperaturaMin.add(i, dado.getTemperatura());
+            serieUmidadeMax.add(i, dado.getUmidade());
+            serieUmidadeMin.add(i, dado.getUmidade());
+            seriePressaoMax.add(i, dado.getPressao());
+            seriePressaoMin.add(i, dado.getPressao());
+        }
+
+        // Create collections for each data type (temperature, humidity, pressure)
+        XYSeriesCollection temperaturaCollection = new XYSeriesCollection();
+        XYSeriesCollection umidadeCollection = new XYSeriesCollection();
+        XYSeriesCollection pressaoCollection = new XYSeriesCollection();
+
+        // Add data series to their respective collections
+        temperaturaCollection.addSeries(serieTemperaturaMax);
+        temperaturaCollection.addSeries(serieTemperaturaMin);
+        umidadeCollection.addSeries(serieUmidadeMax);
+        umidadeCollection.addSeries(serieUmidadeMin);
+        pressaoCollection.addSeries(seriePressaoMax);
+        pressaoCollection.addSeries(seriePressaoMin);
+
+        // Create multiple charts (optional, can be combined into one with subplots)
+        JFreeChart temperaturaChart = ChartFactory.createXYLineChart(
+                "Temperaturas Máximas e Mínimas",
+                "Índice",
+                "Temperatura",
+                temperaturaCollection
+        );
+        JFreeChart umidadeChart = ChartFactory.createXYLineChart(
+                "Umidade Máxima e Mínima",
+                "Índice",
+                "Umidade",
+                umidadeCollection
+        );
+        JFreeChart pressaoChart = ChartFactory.createXYLineChart(
+                "Pressão Máxima e Mínima",
+                "Índice",
+                "Pressão",
+                pressaoCollection
+        );
     }
 
     private static void showErrorDialog(String errorMessage) {

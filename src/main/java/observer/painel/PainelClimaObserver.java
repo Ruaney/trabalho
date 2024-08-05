@@ -18,7 +18,7 @@ public class PainelClimaObserver implements Painel {
 
     @Override
     public void atualizar(ClimaCollection climas, ViewDadosClima view) {
-        DadoClima dadoClima = climas.getClimas().getLast();
+        DadoClima dadoClima = climas.getClimas().get(climas.getClimas().size()-1);
         if (dadoClima.getData().isEqual(LocalDate.now())) {
          
             String data =  String.valueOf(dadoClima.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
