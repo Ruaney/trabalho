@@ -38,7 +38,6 @@ public class ViewDadosClima extends javax.swing.JFrame {
 //        estacaoClimatica.registrarPainel(maximasMinimasObserver);
         initComponents();
         this.setLocationRelativeTo(this.getParent());
-        this.setExtendedState(MAXIMIZED_BOTH);
 
     }
 
@@ -61,17 +60,6 @@ public class ViewDadosClima extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         lblNumeroRegistros = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jInternalFrame2 = new javax.swing.JInternalFrame();
-        lblTemperatura = new javax.swing.JLabel();
-        lblUmidade = new javax.swing.JLabel();
-        lblData = new javax.swing.JLabel();
-        lblPressao = new javax.swing.JLabel();
-        btnIncluir = new javax.swing.JButton();
-        txtData = new javax.swing.JTextField();
-        txtTemperatura = new javax.swing.JTextField();
-        txtUmidade = new javax.swing.JTextField();
-        txtPresao = new javax.swing.JTextField();
-        btnDataAtual = new javax.swing.JButton();
         jInternalFrame3 = new javax.swing.JInternalFrame();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -99,14 +87,18 @@ public class ViewDadosClima extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblRegistros = new javax.swing.JTable();
         jInternalFrame7 = new javax.swing.JInternalFrame();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
+        jPanel1 = new javax.swing.JPanel();
+        jInternalFrame2 = new javax.swing.JInternalFrame();
+        lblTemperatura = new javax.swing.JLabel();
+        lblUmidade = new javax.swing.JLabel();
+        lblData = new javax.swing.JLabel();
+        lblPressao = new javax.swing.JLabel();
+        btnIncluir = new javax.swing.JButton();
+        txtData = new javax.swing.JTextField();
+        txtTemperatura = new javax.swing.JTextField();
+        txtUmidade = new javax.swing.JTextField();
+        txtPresao = new javax.swing.JTextField();
+        btnDataAtual = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -144,200 +136,72 @@ public class ViewDadosClima extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1500, 850));
+        setPreferredSize(new java.awt.Dimension(1500, 850));
+        getContentPane().setLayout(null);
 
         lblNumeroRegistros.setText("99999");
+        getContentPane().add(lblNumeroRegistros);
+        lblNumeroRegistros.setBounds(1290, 760, 160, 14);
 
         jLabel2.setText("Número de registros:");
-
-        jInternalFrame2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jInternalFrame2.setClosable(true);
-        jInternalFrame2.setResizable(true);
-        jInternalFrame2.setTitle("Dados do tempo");
-        jInternalFrame2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jInternalFrame2.setOpaque(true);
-        jInternalFrame2.setVisible(true);
-
-        lblTemperatura.setText("Temperatura");
-
-        lblUmidade.setText("Umidade");
-
-        lblData.setText("Data");
-
-        lblPressao.setText("Presão");
-
-        btnIncluir.setText("Incluir");
-        btnIncluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIncluirActionPerformed(evt);
-            }
-        });
-
-        txtData.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                txtDataMouseExited(evt);
-            }
-        });
-        txtData.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataActionPerformed(evt);
-            }
-        });
-
-        txtTemperatura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTemperaturaActionPerformed(evt);
-            }
-        });
-
-        txtUmidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUmidadeActionPerformed(evt);
-            }
-        });
-
-        txtPresao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPresaoActionPerformed(evt);
-            }
-        });
-
-        btnDataAtual.setText("Data atual");
-        btnDataAtual.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDataAtualActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
-        jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
-        jInternalFrame2Layout.setHorizontalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                        .addComponent(lblTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                        .addComponent(lblUmidade, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtUmidade, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                        .addComponent(lblData, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                        .addComponent(lblPressao, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtPresao, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnIncluir, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnDataAtual, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap())
-        );
-        jInternalFrame2Layout.setVerticalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnDataAtual)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblData, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUmidade, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUmidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPressao, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPresao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnIncluir))
-        );
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(1110, 760, 160, 14);
 
         jInternalFrame3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jInternalFrame3.setClosable(true);
         jInternalFrame3.setResizable(true);
         jInternalFrame3.setTitle("Dados médios");
         jInternalFrame3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jInternalFrame3.setOpaque(true);
         jInternalFrame3.setVisible(true);
+        jInternalFrame3.getContentPane().setLayout(null);
 
         jLabel16.setText("Umidade");
+        jInternalFrame3.getContentPane().add(jLabel16);
+        jLabel16.setBounds(60, 90, 76, 24);
 
         jLabel17.setText("Pressão");
+        jInternalFrame3.getContentPane().add(jLabel17);
+        jLabel17.setBounds(60, 130, 76, 24);
 
         jLabel18.setText("Temperatura");
+        jInternalFrame3.getContentPane().add(jLabel18);
+        jLabel18.setBounds(60, 50, 76, 24);
 
         jLabel19.setText("Número de registro");
+        jInternalFrame3.getContentPane().add(jLabel19);
+        jLabel19.setBounds(60, 180, 116, 24);
 
         lblTemperaturaMedia.setText("Temperatura");
+        jInternalFrame3.getContentPane().add(lblTemperaturaMedia);
+        lblTemperaturaMedia.setBounds(200, 50, 129, 24);
 
         lblUmidadeMedia.setText("Umidade");
+        jInternalFrame3.getContentPane().add(lblUmidadeMedia);
+        lblUmidadeMedia.setBounds(200, 90, 129, 24);
 
         lblPressaoMedia.setText("Pressão");
+        jInternalFrame3.getContentPane().add(lblPressaoMedia);
+        lblPressaoMedia.setBounds(200, 130, 129, 24);
 
         lblRegistrosMedia.setText("Número de registro");
+        jInternalFrame3.getContentPane().add(lblRegistrosMedia);
+        lblRegistrosMedia.setBounds(200, 180, 129, 24);
 
-        javax.swing.GroupLayout jInternalFrame3Layout = new javax.swing.GroupLayout(jInternalFrame3.getContentPane());
-        jInternalFrame3.getContentPane().setLayout(jInternalFrame3Layout);
-        jInternalFrame3Layout.setHorizontalGroup(
-            jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblRegistrosMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPressaoMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUmidadeMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTemperaturaMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(74, Short.MAX_VALUE))
-        );
-        jInternalFrame3Layout.setVerticalGroup(
-            jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame3Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTemperaturaMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUmidadeMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPressaoMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblRegistrosMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
+        getContentPane().add(jInternalFrame3);
+        jInternalFrame3.setBounds(440, 30, 370, 290);
 
         jInternalFrame4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jInternalFrame4.setClosable(true);
         jInternalFrame4.setResizable(true);
         jInternalFrame4.setTitle("Configuração do Sistema");
         jInternalFrame4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jInternalFrame4.setOpaque(true);
         jInternalFrame4.setVisible(true);
+        jInternalFrame4.getContentPane().setLayout(null);
 
         jLabel12.setText("Log");
+        jInternalFrame4.getContentPane().add(jLabel12);
+        jLabel12.setBounds(10, 50, 76, 24);
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -345,6 +209,8 @@ public class ViewDadosClima extends javax.swing.JFrame {
                 btnSalvarActionPerformed(evt);
             }
         });
+        jInternalFrame4.getContentPane().add(btnSalvar);
+        btnSalvar.setBounds(148, 109, 140, 23);
 
         cbFormatoLog.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "XML", "jSON" }));
         cbFormatoLog.addActionListener(new java.awt.event.ActionListener() {
@@ -352,107 +218,64 @@ public class ViewDadosClima extends javax.swing.JFrame {
                 cbFormatoLogActionPerformed(evt);
             }
         });
+        jInternalFrame4.getContentPane().add(cbFormatoLog);
+        cbFormatoLog.setBounds(132, 52, 156, 20);
 
-        javax.swing.GroupLayout jInternalFrame4Layout = new javax.swing.GroupLayout(jInternalFrame4.getContentPane());
-        jInternalFrame4.getContentPane().setLayout(jInternalFrame4Layout);
-        jInternalFrame4Layout.setHorizontalGroup(
-            jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnSalvar))
-                    .addGroup(jInternalFrame4Layout.createSequentialGroup()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
-                        .addComponent(cbFormatoLog, 0, 156, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jInternalFrame4Layout.setVerticalGroup(
-            jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame4Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(jInternalFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbFormatoLog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(btnSalvar)
-                .addContainerGap(79, Short.MAX_VALUE))
-        );
+        getContentPane().add(jInternalFrame4);
+        jInternalFrame4.setBounds(1160, 30, 300, 280);
+        jInternalFrame4.getAccessibleContext().setAccessibleName("ConfiguracaoSistema");
 
         jInternalFrame5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jInternalFrame5.setClosable(true);
         jInternalFrame5.setResizable(true);
         jInternalFrame5.setTitle("Última atualização do tempo");
         jInternalFrame5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jInternalFrame5.setOpaque(true);
         jInternalFrame5.setVisible(true);
+        jInternalFrame5.getContentPane().setLayout(null);
 
         jLabel24.setText("Umidade");
+        jInternalFrame5.getContentPane().add(jLabel24);
+        jLabel24.setBounds(30, 140, 76, 24);
 
         jLabel25.setText("Pressão");
+        jInternalFrame5.getContentPane().add(jLabel25);
+        jLabel25.setBounds(30, 180, 76, 24);
 
         jLabel26.setText("Temperatura");
+        jInternalFrame5.getContentPane().add(jLabel26);
+        jLabel26.setBounds(30, 100, 76, 24);
 
         jLabel27.setText("Data");
+        jInternalFrame5.getContentPane().add(jLabel27);
+        jLabel27.setBounds(30, 220, 116, 24);
 
         lblUmidadeUltimaAtt.setText("Umidade");
+        jInternalFrame5.getContentPane().add(lblUmidadeUltimaAtt);
+        lblUmidadeUltimaAtt.setBounds(160, 140, 129, 24);
 
         lblPressaoUltimaAtt.setText("Pressão");
+        jInternalFrame5.getContentPane().add(lblPressaoUltimaAtt);
+        lblPressaoUltimaAtt.setBounds(160, 180, 129, 24);
 
         lblDataUltimaAtt.setText("Data");
+        jInternalFrame5.getContentPane().add(lblDataUltimaAtt);
+        lblDataUltimaAtt.setBounds(160, 220, 129, 24);
 
         lblTemperaturaUltimaAtt.setText("Temperatura");
+        jInternalFrame5.getContentPane().add(lblTemperaturaUltimaAtt);
+        lblTemperaturaUltimaAtt.setBounds(160, 100, 62, 14);
 
-        javax.swing.GroupLayout jInternalFrame5Layout = new javax.swing.GroupLayout(jInternalFrame5.getContentPane());
-        jInternalFrame5.getContentPane().setLayout(jInternalFrame5Layout);
-        jInternalFrame5Layout.setHorizontalGroup(
-            jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDataUltimaAtt, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPressaoUltimaAtt, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUmidadeUltimaAtt, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTemperaturaUltimaAtt))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        jInternalFrame5Layout.setVerticalGroup(
-            jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame5Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTemperaturaUltimaAtt))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUmidadeUltimaAtt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPressaoUltimaAtt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDataUltimaAtt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(153, Short.MAX_VALUE))
-        );
+        getContentPane().add(jInternalFrame5);
+        jInternalFrame5.setBounds(524, 342, 304, 390);
+        jInternalFrame5.getAccessibleContext().setAccessibleName("UltimaAtualizacao");
 
         jInternalFrame6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jInternalFrame6.setClosable(true);
         jInternalFrame6.setResizable(true);
         jInternalFrame6.setTitle("Registros");
         jInternalFrame6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jInternalFrame6.setOpaque(true);
         jInternalFrame6.setVisible(true);
+        jInternalFrame6.getContentPane().setLayout(null);
 
         btnRemover.setText("Remover");
         btnRemover.addActionListener(new java.awt.event.ActionListener() {
@@ -460,6 +283,8 @@ public class ViewDadosClima extends javax.swing.JFrame {
                 btnRemoverActionPerformed(evt);
             }
         });
+        jInternalFrame6.getContentPane().add(btnRemover);
+        btnRemover.setBounds(290, 310, 170, 23);
 
         tblRegistros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -482,117 +307,115 @@ public class ViewDadosClima extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblRegistros);
 
-        javax.swing.GroupLayout jInternalFrame6Layout = new javax.swing.GroupLayout(jInternalFrame6.getContentPane());
-        jInternalFrame6.getContentPane().setLayout(jInternalFrame6Layout);
-        jInternalFrame6Layout.setHorizontalGroup(
-            jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrame6Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnRemover))
-                    .addComponent(jScrollPane2))
-                .addContainerGap())
-        );
-        jInternalFrame6Layout.setVerticalGroup(
-            jInternalFrame6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnRemover)
-                .addContainerGap())
-        );
+        jInternalFrame6.getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(10, 11, 452, 290);
+
+        getContentPane().add(jInternalFrame6);
+        jInternalFrame6.setBounds(24, 342, 474, 390);
 
         jInternalFrame7.setTitle("Máximas e mínimas");
         jInternalFrame7.setVisible(true);
+        jInternalFrame7.getContentPane().setLayout(null);
 
-        javax.swing.GroupLayout jInternalFrame7Layout = new javax.swing.GroupLayout(jInternalFrame7.getContentPane());
-        jInternalFrame7.getContentPane().setLayout(jInternalFrame7Layout);
-        jInternalFrame7Layout.setHorizontalGroup(
-            jInternalFrame7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 529, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 590, Short.MAX_VALUE)
         );
-        jInternalFrame7Layout.setVerticalGroup(
-            jInternalFrame7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 343, Short.MAX_VALUE)
-        );
-
-        jMenu2.setText("Janelas");
-
-        jMenu3.setText("Dados do tempo");
-        jMenu2.add(jMenu3);
-
-        jMenu4.setText("Dados médios");
-        jMenu2.add(jMenu4);
-
-        jMenu5.setText("Registros");
-        jMenu2.add(jMenu5);
-
-        jMenu6.setText("Última atualizaçao do tempo ");
-        jMenu2.add(jMenu6);
-
-        jMenu7.setText("Maximas e mínimas");
-        jMenu2.add(jMenu7);
-
-        jMenuBar1.add(jMenu2);
-
-        jMenu1.setText("Configurar");
-        jMenuBar1.add(jMenu1);
-
-        setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblNumeroRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jInternalFrame6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jInternalFrame3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jInternalFrame5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jInternalFrame7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jInternalFrame4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jInternalFrame4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jInternalFrame3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jInternalFrame6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jInternalFrame7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNumeroRegistros)
-                            .addComponent(jLabel2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jInternalFrame5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
         );
 
-        jInternalFrame4.getAccessibleContext().setAccessibleName("ConfiguracaoSistema");
-        jInternalFrame5.getAccessibleContext().setAccessibleName("UltimaAtualizacao");
+        jInternalFrame7.getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 590, 350);
+
+        getContentPane().add(jInternalFrame7);
+        jInternalFrame7.setBounds(850, 342, 610, 390);
         jInternalFrame7.getAccessibleContext().setAccessibleName("MaxMim");
+
+        jInternalFrame2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jInternalFrame2.setResizable(true);
+        jInternalFrame2.setTitle("Dados do tempo");
+        jInternalFrame2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jInternalFrame2.setOpaque(true);
+        jInternalFrame2.setVisible(true);
+        jInternalFrame2.getContentPane().setLayout(null);
+
+        lblTemperatura.setText("Temperatura");
+        jInternalFrame2.getContentPane().add(lblTemperatura);
+        lblTemperatura.setBounds(10, 89, 76, 24);
+
+        lblUmidade.setText("Umidade");
+        jInternalFrame2.getContentPane().add(lblUmidade);
+        lblUmidade.setBounds(10, 131, 76, 24);
+
+        lblData.setText("Data");
+        jInternalFrame2.getContentPane().add(lblData);
+        lblData.setBounds(10, 47, 76, 24);
+
+        lblPressao.setText("Presão");
+        jInternalFrame2.getContentPane().add(lblPressao);
+        lblPressao.setBounds(10, 173, 76, 24);
+
+        btnIncluir.setText("Incluir");
+        btnIncluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIncluirActionPerformed(evt);
+            }
+        });
+        jInternalFrame2.getContentPane().add(btnIncluir);
+        btnIncluir.setBounds(201, 210, 150, 23);
+
+        txtData.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtDataMouseExited(evt);
+            }
+        });
+        txtData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDataActionPerformed(evt);
+            }
+        });
+        jInternalFrame2.getContentPane().add(txtData);
+        txtData.setBounds(201, 50, 150, 20);
+
+        txtTemperatura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTemperaturaActionPerformed(evt);
+            }
+        });
+        jInternalFrame2.getContentPane().add(txtTemperatura);
+        txtTemperatura.setBounds(200, 90, 151, 20);
+
+        txtUmidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUmidadeActionPerformed(evt);
+            }
+        });
+        jInternalFrame2.getContentPane().add(txtUmidade);
+        txtUmidade.setBounds(200, 130, 151, 20);
+
+        txtPresao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPresaoActionPerformed(evt);
+            }
+        });
+        jInternalFrame2.getContentPane().add(txtPresao);
+        txtPresao.setBounds(200, 170, 151, 20);
+
+        btnDataAtual.setText("Data atual");
+        btnDataAtual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDataAtualActionPerformed(evt);
+            }
+        });
+        jInternalFrame2.getContentPane().add(btnDataAtual);
+        btnDataAtual.setBounds(203, 20, 150, 23);
+
+        getContentPane().add(jInternalFrame2);
+        jInternalFrame2.setBounds(40, 30, 370, 290);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -787,14 +610,7 @@ public class ViewDadosClima extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblData;
     private javax.swing.JLabel lblDataUltimaAtt;
